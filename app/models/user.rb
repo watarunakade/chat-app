@@ -8,4 +8,5 @@ class User < ApplicationRecord
   
   has_many :room_users
   has_many :rooms, through: :room_users # room_usersを通してroom.rbと関係を持っている。
+  has_many :messages
 end
