@@ -2,6 +2,7 @@ class MessagesController < ApplicationController
   def index
     @message = Message.new
     @room = Room.find(params[:room_id])#paramsに含まれているroom_idを代入する
+    @messages = @room.messages.includes(:user)
   end
 
   def create
@@ -10,6 +11,7 @@ class MessagesController < ApplicationController
     if @message.save #メッセージを保存できた時
       redirect_to room_messages_path(@room)
     else #できなかった時
+      @messages = @room.messages.includes(:user)
       render :index
     end
   end
