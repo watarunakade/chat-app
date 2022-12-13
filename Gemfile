@@ -54,3 +54,5 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'#運用・テスト・本番のすべての環境で使用するので、一番下に記述する.
 gem 'pry-rails'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
